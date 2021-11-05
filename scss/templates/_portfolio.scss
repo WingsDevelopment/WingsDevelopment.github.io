@@ -1,121 +1,76 @@
-.portfolio-work {
-	padding: 80px 0;
 
-	.block {
-		.portfolio-menu {
-			text-align: center;
-
-			.btn-group {
-				margin-bottom: 40px;
-
-				label {
-					display: inline-block;
-					border: 1px solid $border-color;
-					padding: 8px 25px;
-					cursor: pointer;
-					font-size: 15px;
-					color: #333333;
-					outline: 0;
-					background: $light;
-					margin: 2px;
-					border-radius: 0;
-					@include transition (all, 0.3s, ease);
-				}
-			}
-		}
-	}
+/*=================================================================
+  Portfolio section
+==================================================================*/
+.portfolio-filter {
+  margin-bottom: 40px;
+  text-align: center;
+  button {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    padding:8px 20px;
+    text-transform: uppercase;
+    background:$primary-color;
+    border:none;
+    color:$light;
+    outline: none;
+    &.active {
+        background: $primary-color;
+        color:$light;
+        border-radius: 50px;
+      }
+  }
 }
 
-.portfolio {
-	&-item {
-		position: relative;
-		padding: 0;
-
-		img {
-			width: 100%;
-			height: auto;
-		}
-
-		&:hover {
-			.portfolio-hover {
-				visibility: visible;
-				opacity: 1;
-			}
-
-			.portfolio-content {
-				transform: translateY(-50%);
-			}
-		}
-	}
-
-	&-hover {
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		top: 0;
-		left: 0;
-		background: rgba(60, 55, 55, 0.5);
-		visibility: hidden;
-		opacity: 0;
-		transition: .3s ease;
-	}
-
-	&-content {
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 50%;
-		transform: translateY(-40%);
-		text-align: center;
-		padding: 20px;
-		transition: inherit;
-
-		* {
-			color: $light;
-		}
-
-		a {
-			display: block;
-			transition: .2s ease;
-
-			i {
-				font-size: 30px;
-			}
-
-			&.h3 {
-				margin-top: 0;
-			}
-		}
-	}
+.portfolio-block {
+  position: relative;
+  margin-bottom: 30px;
+  &:before {
+    transition: all 0.3s ease-in-out;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    position:absolute;
+    content: '';
+  }
+  &:hover:before {
+    opacity: 1;
+  }
+  &:hover .caption h4 {
+    top:45%;
+  }
+  &:hover .caption {
+    opacity: 1;
+    top: 55%;
+  }
+  .caption {
+    position: absolute;
+    top:50%;
+    left:50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    h4 {
+      font-size: 16px;  
+      a {
+        color: $light;
+      }
+    }
+    .search-icon {
+      background: $primary-color;
+      color:$light;
+      display: inline-block;
+      padding: 4px 13px;
+      font-size: 25px;
+      border-radius: 30px;
+    }
+  }
 }
 
 
-
-
-// Portfolio Single Page
-.portfolio-single-page {
-	.project-details {
-		h4 {
-			margin-bottom: 20px;
-			padding-bottom: 10px;
-			border-bottom: 2px dashed $border-color;
-		}
-
-		span {
-			color: #838383;
-			width: 180px;
-			display: inline-block;
-		}
-
-		strong {
-			color: #313131;
-			font-weight: normal;
-		}
-
-		ul {
-			li {
-				margin-bottom: 10px;
-			}
-		}
-	}
-}
