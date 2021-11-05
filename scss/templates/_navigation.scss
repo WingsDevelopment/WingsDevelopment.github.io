@@ -141,10 +141,12 @@
 
   .logo-white {
     display: none;
+    max-width: 100px !important;
   }
 
   .logo-default {
     display: block;
+    max-width: 100px !important;
   }
 }
 
